@@ -6,7 +6,7 @@
 /*   By: tpongrit <tpongrit <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:05:17 by tpongrit          #+#    #+#             */
-/*   Updated: 2022/12/21 11:10:29 by tpongrit         ###   ########.fr       */
+/*   Updated: 2022/12/24 20:51:28 by tpongrit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_read(int fd, char *str)
 	if (!buf)
 		return (0);
 	bytes_count = 2004;
-	while (!ft_strchr(str, '\n') && bytes_count != 0)
+	while (!check4nl(str) && bytes_count != 0)
 	{
 		bytes_count = read(fd, buf, BUFFER_SIZE);
 		if (bytes_count == -1)
@@ -65,7 +65,7 @@ int	main(void) {
 	fd2 = open("testme2.txt", O_RDONLY);
 	fd3 = open("testme3.txt", O_RDONLY);
 	i = 1;
-	while (i < 7){
+	while (i < 5){
 		line = get_next_line(fd1);
 		printf("line [%02d]: %s", i, line);
 		free(line);

@@ -6,7 +6,7 @@
 /*   By: tpongrit <tpongrit <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 19:55:48 by tpongrit          #+#    #+#             */
-/*   Updated: 2022/12/23 11:27:31 by tpongrit         ###   ########.fr       */
+/*   Updated: 2022/12/24 20:20:50 by tpongrit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,20 @@ char	*ft_strjoin(char *s1, char *s2)
 ft_strjoin: join string s1 and string s2
 */
 
-char	*ft_strchr(const char *s, int c)
+char	*check4nl(char *str)
 {
-	while ((*s != '\0') && (*s != (char) c))
+	int	i;
+	int	c;
+
+	i = 0;
+	c = '\n';
+	if (!str)
+		return (0);
+	while (str[i] != '\0')
 	{
-		s++;
-	}
-	if (*s == (char) c)
-	{
-		return ((char *)s);
+		if (str[i] == (char) c)
+			return ((char *)&str[i]);
+		i++;
 	}
 	return (0);
 }
@@ -105,15 +110,15 @@ char	*ft_return_line(char *str)
 	char	*line;
 
 	i = 0;
-	if (str[i] != '\0')
+	if (str[i] == '\0')
 		return (0);
-	while (str[i] != '\n')
+	while (str[i] != '\n' && str[i] != '\0')
 		i++;
 	line = (char *)malloc(sizeof(char) * (i + 2));
 	if (!line)
 		return (0);
 	i = 0;
-	while (str[i] != '\n')
+	while (str[i] != '\n' && str[i] != '\0')
 	{
 		line[i] = str[i];
 		i++;
