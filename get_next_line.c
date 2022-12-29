@@ -6,7 +6,7 @@
 /*   By: tpongrit <tpongrit <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:05:17 by tpongrit          #+#    #+#             */
-/*   Updated: 2022/12/24 20:51:28 by tpongrit         ###   ########.fr       */
+/*   Updated: 2022/12/29 15:30:50 by tpongrit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,31 +55,26 @@ char	*get_next_line(int fd)
 	return (line);
 }
 /*
-int	main(void) {
+#include <string.h>
+int	main(int argc, char *argv[])
+{
 	char	*line;
 	int		i;
-	int		fd1;
-	int		fd2;
-	int		fd3;
-	fd1 = open("testme1.txt", O_RDONLY);
-	fd2 = open("testme2.txt", O_RDONLY);
-	fd3 = open("testme3.txt", O_RDONLY);
-	i = 1;
-	while (i < 5){
-		line = get_next_line(fd1);
-		printf("line [%02d]: %s", i, line);
+	int		j;
+	int		fd;
+	int		k;
+	fd = open("testme1.txt", O_RDONLY);
+	i = 0;
+	j = 1;
+	k = atoi(argv[1]);
+	while (i < k){
+		line = get_next_line(fd);
+		printf("line [%02d]: %s", j, line);
 		free(line);
-	//	line = get_next_line(fd2);
-	//	printf("line [%02d]: %s", i, line);
-	//	free(line);
-	//	line = get_next_line(fd3);
-	//	printf("line [%02d]: %s", i, line);
-	//	free(line);
 		i++;
+		j++;
 	}
-	close(fd1);
-	close(fd2);
-	close(fd3);
+	close(fd);
 	return (0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: tpongrit <tpongrit <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 19:55:48 by tpongrit          #+#    #+#             */
-/*   Updated: 2022/12/29 11:59:47 by tpongrit         ###   ########.fr       */
+/*   Updated: 2022/12/29 15:21:53 by tpongrit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,37 +72,6 @@ char	*check4nl(char *str)
 	}
 	return (0);
 }
-/*
-void	ft_bzero(void *s, size_t n)
-{
-	char	*str;
-
-	str = (char *)s;
-	while (n--)
-		*str++ = '\0';
-}
-*/
-/*
-char	*ft_strdup(const char *s1)
-{
-	char	*s2;
-	size_t	len;
-	int		i;
-
-	i = 0;
-	len = ft_strlen(s1) + 1;
-	s2 = malloc(sizeof(char) * len);
-	if (!s2)
-		return (0);
-	while (s1[i] != '\0')
-	{
-		s2[i] = s1[i];
-		i++;
-	}
-	s2[i] = '\0';
-	return (s2);
-}
-*/
 
 char	*ft_return_line(char *str)
 {
@@ -157,3 +126,34 @@ char	*ft_move_line(char *str)
 	free(str);
 	return (line);
 }
+/*
+void	ft_bzero(void *s, size_t n)
+{
+	char	*str;
+
+	str = (char *)s;
+	while (n--)
+		*str++ = '\0';
+}
+*/
+/*
+char	*ft_strdup(const char *s1)
+{
+	char	*s2;
+	size_t	len;
+	int		i;
+
+	i = 0;
+	len = ft_strlen(s1) + 1;
+	s2 = malloc(sizeof(char) * len);
+	if (!s2)
+		return (0);
+	while (s1[i] != '\0')
+	{
+		s2[i] = s1[i];
+		i++;
+	}
+	s2[i] = '\0';
+	return (s2);
+}
+*/
