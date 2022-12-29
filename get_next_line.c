@@ -6,15 +6,11 @@
 /*   By: tpongrit <tpongrit <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:05:17 by tpongrit          #+#    #+#             */
-/*   Updated: 2022/12/29 15:30:50 by tpongrit         ###   ########.fr       */
+/*   Updated: 2022/12/29 21:02:30 by tpongrit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <fcntl.h>
 
 char	*ft_read(int fd, char *str)
 {
@@ -25,7 +21,7 @@ char	*ft_read(int fd, char *str)
 	if (!buf)
 		return (0);
 	bytes_count = 2004;
-	while (!check4nl(str) && bytes_count != 0)
+	while (!ft_strchr_nl(str) && bytes_count != 0)
 	{
 		bytes_count = read(fd, buf, BUFFER_SIZE);
 		if (bytes_count == -1)

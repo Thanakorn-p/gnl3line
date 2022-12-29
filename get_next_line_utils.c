@@ -6,11 +6,10 @@
 /*   By: tpongrit <tpongrit <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 19:55:48 by tpongrit          #+#    #+#             */
-/*   Updated: 2022/12/29 15:21:53 by tpongrit         ###   ########.fr       */
+/*   Updated: 2022/12/29 21:02:28 by tpongrit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "get_next_line.h"
 
 size_t	ft_strlen(const char *s)
@@ -55,7 +54,7 @@ char	*ft_strjoin(char *s1, char *s2)
 ft_strjoin: join string s1 and string s2
 */
 
-char	*check4nl(char *str)
+char	*ft_strchr_nl(char *str)
 {
 	int	i;
 	int	c;
