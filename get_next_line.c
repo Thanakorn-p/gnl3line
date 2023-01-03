@@ -6,7 +6,7 @@
 /*   By: tpongrit <tpongrit <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:05:17 by tpongrit          #+#    #+#             */
-/*   Updated: 2022/12/29 21:02:30 by tpongrit         ###   ########.fr       */
+/*   Updated: 2023/01/03 08:31:42 by tpongrit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_read(int fd, char *str)
 	if (!buf)
 		return (0);
 	bytes_count = 2004;
-	while (!ft_strchr_nl(str) && bytes_count != 0)
+	while (bytes_count != 0)
 	{
 		bytes_count = read(fd, buf, BUFFER_SIZE);
 		if (bytes_count == -1)
@@ -31,6 +31,8 @@ char	*ft_read(int fd, char *str)
 		}
 		buf[bytes_count] = '\0';
 		str = ft_strjoin(str, buf);
+		if (ft_strchr_nl(str))
+			break;
 	}
 	free(buf);
 	return (str);
